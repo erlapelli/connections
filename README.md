@@ -41,3 +41,16 @@ Body
    Route=/connections => Connections 
    Router=/profile => Profile 
 
+
+
+
+
+   # Deployement 
+
+   -Signup on AWS 
+   -Launch instance 
+   -chmod 400 <secret>.pem 
+   -ssh -i "devtinder-secret.pem" ubuntu@ec2-13-60-2-78.eu-north-1.compute.amazonaws.com
+   - Install Node version 21.6.1 (Install the version that work fine in local that will work fine in aws machine without any bugs)
+
+
