@@ -58,7 +58,7 @@ Body
        - npm run build 
        - sudo apt update 
        - sudo apt install nginx 
-       - sudo system start nginx 
+       - sudo systemctl start nginx 
        - sudo systemctl enable nginx
        - Copy code from dist(build files) to /var/www/html/
        -sudo scp -r dist/* /var/www/html/
@@ -68,6 +68,36 @@ Body
   -updated DB password 
   -allowed ec2 instance public IP on mongodb server
   -npm install pm2 -g 
+  -pm2 start npm --name "decTinder-backend" -- start
   -pm2 start npm -- start 
+  -pm2 logs 
+  -pm2 list, pm2 flush <name> ,pm2 stop <name>,pm2 delete <name>
+  -config nginx -/etc/nginx/sites-available/default
+  - restart nginx - sudo systemctl restart nginx
+  - Modify the BASEURL in frontend project to "/api"
+
+
+Ngxinx config:
+
+  Frontend = http://13.60.2.78/ 
+  Backend = http://13.60.2.78:7777/ 
+
+  Domain name = devtinder.com => 13.60.2.78
+
+  Domain name = devtinder.com 
+  Backend = devtinder.com:7777 => devtinder.com/api
+
+ server_name 13.60.2.78 port
+
+  nginx config :
+
+     location /api/ {
+        proxy_pass http://localhost:7777/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
 
 
