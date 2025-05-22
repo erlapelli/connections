@@ -101,3 +101,32 @@ Ngxinx config:
     }
 
 
+ # Adding a custom Domain name 
+
+   - purchased domain name from godaddy 
+   - signup on cloudflare & add a new domain name 
+   - change the name servers on godaddy and point it to cloudflare 
+   - wait for sometime till your nameservers are update ~ taken 15 minutes
+   -DNS record: A devtinder.in in 43.204.96.49 
+   -Enable SSL for wedsite 
+   
+   # Sending Emails via SES 
+   
+   - Create a IAM user 
+   - Give Access to AmazonSESFullAccess 
+   - Amazon SES: Create an Identity 
+   - Verify your domain name 
+   - verify an email address
+   - Install AWS SDK - v3 
+   - code Example : https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/ses#code-examples
+   -setup SesClient 
+   -Access Credentials should be created in IAm under securitycredentials Tab 
+   -Add the credentials to the env file 
+   - Write code for SESClient 
+   - Write code for sending email address 
+   - Make the email dynamic by passing more params to the run function 
+   
+
+
+
+
